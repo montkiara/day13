@@ -24,7 +24,7 @@ class PoemsController < ApplicationController
   # POST /poems
   # POST /poems.json
   def create
-    @poem = Poem.new(poems_params)
+    @poem = Poem.new(poem_params)
     respond_to do |format|
       if @poem.save
         format.html { redirect_to @poem, notice: 'Poem was successfully created.' }
