@@ -54,9 +54,11 @@ class PoemsController < ApplicationController
   # DELETE /poems/1
   # DELETE /poems/1.json
   def destroy
+    @poem = Poem.find(params[:id])
     @poem.destroy
     respond_to do |format|
-      format.html { redirect_to poems_url, notice: 'Poem was successfully destroyed.' }
+      #format.html { redirect_to poems_url, notice: 'Poem was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Poem was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
